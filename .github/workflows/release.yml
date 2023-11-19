@@ -11,12 +11,12 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: C:\project\C++\Exercise 1  # Adjust this path
+        working-directory: ./path/to/your/project  # Adjust this path
     steps:
       - name: Setup Node.js
-        uses: actions/setup-node@v4  # Use the latest version of setup-node
+        uses: actions/setup-node@v4
         with:
-          node-version: '16'  # Specify the desired Node.js version
+          node-version: '16'
       - name: Checkout code
         uses: actions/checkout@v2
         with:
