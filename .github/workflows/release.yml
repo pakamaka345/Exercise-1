@@ -9,8 +9,16 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: C:\project\C++\Exercise 1  # Adjust this path
     steps:
-      - uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v4  # Use the latest version of setup-node
+        with:
+          node-version: '16'  # Specify the desired Node.js version
+      - name: Checkout code
+        uses: actions/checkout@v2
         with:
           submodules: true
       - run: sudo apt-get update && sudo apt-get install libboost-test-dev -y
